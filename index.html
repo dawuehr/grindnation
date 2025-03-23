@@ -108,6 +108,19 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        .insta-btn {
+            background: linear-gradient(to right, #ff7a00, #ff4500);
+            color: white;
+            padding: 20px 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .insta-btn:hover {
+            background: linear-gradient(to right, #ff4500, #ff0000);
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -116,7 +129,7 @@
         <a href="index.html">Home</a>
         <a href="news.html">News</a>
         <a href="athleten.html">Athleten</a>
-        <a href="geschichte.html" class="new">Geschichte <span class="new">Neu</span></a> <!-- "Neu" dauerhaft und wackelnd -->
+        <a href="geschichte.html" class="new">Geschichte <span class="new">Neu</span></a>
     </div>
 
     <header>
@@ -151,7 +164,9 @@
     </div>
 
     <div class="footer">
-        <p>&copy; 2025 GrindNation | Folge uns auf <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+        <p>&copy; 2025 GrindNation | Folge uns auf 
+            <a href="https://www.instagram.com/pl.grindnation/" class="insta-btn" target="_blank">Instagram</a>
+        </p>
     </div>
 
 </body>
