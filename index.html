@@ -82,17 +82,10 @@
         .card:hover {
             transform: scale(1.05);
         }
-        .video-container {
-            position: relative;
+        .hero-image {
             width: 100%;
-            height: 60vh;
-            overflow: hidden;
-        }
-        .video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
+            height: auto;
+            display: block;
         }
         .discord-btn {
             display: block;
@@ -128,11 +121,7 @@
         <a href="#">Forum</a>
         <a href="#shop">Shop</a>
     </div>
-    <div class="video-container">
-        <video autoplay loop muted>
-            <source src="https://www.videvo.net/videvo_files/converted/2014_08/preview/Weight_Lifting.mp481784.webm" type="video/webm">
-        </video>
-    </div>
+    <img src="https://images.unsplash.com/photo-1605296867424-32530d27f8a7" class="hero-image" alt="Athlete Deadlifting">
     <header>
         <h1>Welcome to GrindNation</h1>
         <p>The #1 Community for Powerlifting & Bodybuilding</p>
@@ -140,7 +129,6 @@
     <div class="container">
         <h2>Train Hard. Lift Heavy. Stay Strong.</h2>
         <img src="https://www.eleiko.com/images/eleiko-plates.jpg" class="powerlifter" alt="Eleiko Plates">
-        <img src="https://www.pexels.com/photo/man-performing-deadlift-4760647/" class="powerlifter" alt="Athlete Deadlifting">
         <p>GrindNation is your home for the latest news, top athletes, and expert advice.</p>
         <a href="#" class="discord-btn">Join our Discord</a>
     </div>
@@ -162,36 +150,8 @@
             <p>Stay updated with the biggest powerlifting and bodybuilding events.</p>
         </div>
     </div>
-    <div class="container" id="shop">
-        <h2>Shop</h2>
-        <p>Get the best lifting gear, supplements, and apparel to take your training to the next level!</p>
-        <div class="grid">
-            <div class="card">
-                <h3>GrindNation Lifting Belt</h3>
-                <p>High-quality leather belt for maximum support.</p>
-            </div>
-            <div class="card">
-                <h3>GrindNation Apparel</h3>
-                <p>Exclusive hoodies, T-shirts, and more.</p>
-            </div>
-            <div class="card">
-                <h3>Supplements</h3>
-                <p>Boost your gains with our top-tier supplements.</p>
-            </div>
-        </div>
-    </div>
     <div class="footer">
         <p>&copy; 2025 GrindNation | Follow us on <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
     </div>
-    <script>
-        document.addEventListener("scroll", function() {
-            let images = document.querySelectorAll(".powerlifter");
-            images.forEach(img => {
-                if (img.getBoundingClientRect().top < window.innerHeight - 100) {
-                    img.classList.add("fade-in");
-                }
-            });
-        });
-    </script>
 </body>
 </html>
