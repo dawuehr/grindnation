@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrindNation - News</title>
+    <title>GrindNation - Powerlifting & Bodybuilding</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,6 +11,18 @@
             color: white;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #ff4500, #ff0000);
+        }
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+            font-family: "Arial Black", sans-serif;
         }
         .navbar {
             display: flex;
@@ -37,15 +49,38 @@
             padding: 50px 0;
             text-align: center;
         }
-        .news-item {
+        .about {
+            padding: 50px;
+            background: #1e1e1e;
+            text-align: center;
+        }
+        .about h2 {
+            color: #ff4500;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px;
+        }
+        .card {
             background: #222;
             padding: 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
-            text-align: left;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
         }
-        h2 {
-            color: #ff4500;
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -53,30 +88,38 @@
     <div class="navbar">
         <a href="index.html">Home</a>
         <a href="news.html">News</a>
-        <a href="#">Athleten</a>
-        <a href="#">Forum</a>
-        <a href="#">Shop</a>
-        <a href="https://discord.gg/ny8DxBzT">Discord</a>
+        <a href="#athleten">Athleten</a>
+        <a href="#forum">Forum</a>
+        <a href="#shop">Shop</a>
     </div>
-
+    <header>
+        <h1>Willkommen bei GrindNation</h1>
+        <p>Die stärkste Community für Powerlifting & Bodybuilding.</p>
+    </header>
     <div class="container">
-        <h2>GrindNation News</h2>
-        <p>Hier findest du die neuesten Updates aus der Powerlifting- und Bodybuilding-Welt!</p>
-
-        <div class="news-item">
-            <h3>🏆 Neuer Weltrekord im Deadlift!</h3>
-            <p>Ein neuer Weltrekord wurde beim letzten Wettkampf aufgestellt. Erfahre mehr über den unglaublichen Lift!</p>
+        <h2>Trainiere hart. Hebe schwer. Bleib stark.</h2>
+        <p>GrindNation ist dein Zuhause für die neuesten News, Top-Athleten und Expertenwissen.</p>
+    </div>
+    <div class="about">
+        <h2>Über GrindNation</h2>
+        <p>Wir sind ein Team, das sich auf Powerlifting-Wettkämpfe fokussiert und täglich an unsere Grenzen geht.</p>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <h3>🔥 Top Athleten</h3>
+            <p>Lerne die stärksten und engagiertesten Athleten kennen.</p>
         </div>
-
-        <div class="news-item">
-            <h3>🔥 Trainingsgeheimnisse der Profis</h3>
-            <p>Die besten Powerlifter der Welt teilen ihre Tipps. Lerne von den Stärksten!</p>
+        <div class="card">
+            <h3>💪 Trainingstipps</h3>
+            <p>Hol dir Expertenratschläge, um deine Lifts zu verbessern.</p>
         </div>
-
-        <div class="news-item">
-            <h3>💪 Die besten Supplements für mehr Kraft</h3>
-            <p>Welche Supplements helfen wirklich beim Muskelaufbau und der Regeneration?</p>
+        <div class="card">
+            <h3>🏆 Wettkämpfe</h3>
+            <p>Bleib up to date mit den größten Powerlifting- und Bodybuilding-Events.</p>
         </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 GrindNation | Folge uns auf <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
     </div>
 </body>
 </html>
