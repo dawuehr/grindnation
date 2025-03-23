@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
     <style>
         body {
             background-color: #1e1e1e;
@@ -49,6 +51,20 @@
             text-align: left;
             border-left: 4px solid #ff4500;
         }
+        .navigation {
+            background: #111;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .navigation a {
+            color: #ff4500;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -66,19 +82,47 @@
         <button id="post-button">Posten</button>
         <div id="posts"></div>
     </div>
+    <div class="navigation">
+        <a href="#">Home</a>
+        <a href="#">Forum</a>
+        <a href="#">Kontakt</a>
+    </div>
     <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyB6b3kTn5YSXxK0xNZEL4klmOE6tm4aCM8",
+            authDomain: "grindnation-bca63.firebaseapp.com",
+            databaseURL: "https://grindnation-bca63-default-rtdb.firebaseio.com",
+            projectId: "grindnation-bca63",
+            storageBucket: "grindnation-bca63.firebasestorage.app",
+            messagingSenderId: "408874912991",
+            appId: "1:408874912991:web:de0f9daa36416fdc762d6a"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
         document.getElementById("post-button").addEventListener("click", function() {
             let name = document.getElementById("name-input").value;
             let category = document.getElementById("category").value;
             let postText = document.getElementById("post-input").value;
 
             if (name.trim() !== "" && postText.trim() !== "") {
-                let postDiv = document.createElement("div");
-                postDiv.classList.add("post");
-                postDiv.innerHTML = `<strong>${name}</strong> [${category}]: ${postText}`;
-                document.getElementById("posts").appendChild(postDiv);
+                let newPostRef = database.ref("posts").push();
+                newPostRef.set({
+                    name: name,
+                    category: category,
+                    text: postText
+                });
                 document.getElementById("post-input").value = "";
             }
+        });
+
+        database.ref("posts").on("child_added", function(snapshot) {
+            let post = snapshot.val();
+            let postDiv = document.createElement("div");
+            postDiv.classList.add("post");
+            postDiv.innerHTML = `<strong>${post.name}</strong> [${post.category}]: ${post.text}`;
+            document.getElementById("posts").appendChild(postDiv);
         });
     </script>
 </body>
