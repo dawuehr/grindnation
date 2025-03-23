@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,12 +22,16 @@
             font-size: 3em;
             text-transform: uppercase;
             animation: fadeIn 2s ease-in-out;
+            font-family: Impact, sans-serif;
         }
         .navbar {
             display: flex;
             justify-content: center;
             background: #222;
             padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .navbar a {
             color: white;
@@ -44,19 +48,6 @@
             margin: auto;
             padding: 50px 0;
             text-align: center;
-        }
-        .powerlifter {
-            width: 100%;
-            max-width: 800px;
-            display: block;
-            margin: 20px auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-in-out;
-        }
-        .fade-in {
-            opacity: 1;
-            transform: translateY(0);
         }
         .about {
             padding: 50px;
@@ -82,25 +73,28 @@
         .card:hover {
             transform: scale(1.05);
         }
-        .hero-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .discord-btn {
-            display: block;
-            width: 200px;
-            margin: 20px auto;
-            padding: 15px;
-            background: #7289DA;
-            color: white;
+        .partners {
+            background: #1e1e1e;
+            padding: 50px;
             text-align: center;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
         }
-        .discord-btn:hover {
-            background: #5a6cb2;
+        .partners h2 {
+            color: #ff4500;
+        }
+        .partner-logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .partner-logos img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .partner-logos img:hover {
+            transform: scale(1.1);
         }
         .footer {
             text-align: center;
@@ -117,41 +111,46 @@
     <div class="navbar">
         <a href="#">Home</a>
         <a href="#">News</a>
-        <a href="#">Athletes</a>
+        <a href="#">Athleten</a>
         <a href="#">Forum</a>
         <a href="#shop">Shop</a>
     </div>
-    <img src="https://images.unsplash.com/photo-1605296867424-32530d27f8a7" class="hero-image" alt="Athlete Deadlifting">
     <header>
-        <h1>Welcome to GrindNation</h1>
-        <p>The #1 Community for Powerlifting & Bodybuilding</p>
+        <h1>Willkommen bei GrindNation</h1>
+        <p>Die stärkste Community für Powerlifting & Bodybuilding</p>
     </header>
     <div class="container">
-        <h2>Train Hard. Lift Heavy. Stay Strong.</h2>
-        <img src="https://www.eleiko.com/images/eleiko-plates.jpg" class="powerlifter" alt="Eleiko Plates">
-        <p>GrindNation is your home for the latest news, top athletes, and expert advice.</p>
-        <a href="#" class="discord-btn">Join our Discord</a>
+        <h2>Trainiere hart. Hebe schwer. Bleib stark.</h2>
+        <p>GrindNation ist dein Zuhause für die neuesten News, Top-Athleten und Expertenwissen.</p>
     </div>
     <div class="about">
-        <h2>About GrindNation</h2>
-        <p>GrindNation is built for those who push their limits every day. Whether you are a powerlifter, bodybuilder, or just love the gym lifestyle, this is your home.</p>
+        <h2>Über GrindNation</h2>
+        <p>Wir sind ein Team, das sich auf Powerlifting-Wettkämpfe fokussiert und jeden Tag an unsere Grenzen geht.</p>
     </div>
     <div class="grid">
         <div class="card">
-            <h3>🔥 Top Athletes</h3>
-            <p>Meet the strongest and most dedicated athletes in the game.</p>
+            <h3>🔥 Top Athleten</h3>
+            <p>Lerne die stärksten und engagiertesten Athleten kennen.</p>
         </div>
         <div class="card">
-            <h3>💪 Training Tips</h3>
-            <p>Get expert advice on how to improve your lifts and build muscle.</p>
+            <h3>💪 Trainingstipps</h3>
+            <p>Hol dir Expertenratschläge, um deine Lifts zu verbessern.</p>
         </div>
         <div class="card">
-            <h3>🏆 Competitions</h3>
-            <p>Stay updated with the biggest powerlifting and bodybuilding events.</p>
+            <h3>🏆 Wettkämpfe</h3>
+            <p>Bleib up to date mit den größten Powerlifting- und Bodybuilding-Events.</p>
+        </div>
+    </div>
+    <div class="partners">
+        <h2>Unsere Partner & Sponsoren</h2>
+        <div class="partner-logos">
+            <img src="logo1.png" alt="Sponsor 1">
+            <img src="logo2.png" alt="Sponsor 2">
+            <img src="logo3.png" alt="Sponsor 3">
         </div>
     </div>
     <div class="footer">
-        <p>&copy; 2025 GrindNation | Follow us on <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+        <p>&copy; 2025 GrindNation | Folge uns auf <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
     </div>
 </body>
 </html>
