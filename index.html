@@ -78,6 +78,19 @@
             padding: 20px;
             background: #222;
         }
+        .btn {
+            background: #ff4500;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #ff0000;
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -85,26 +98,32 @@
     </style>
 </head>
 <body>
+
     <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#">News</a>
-        <a href="#">Athleten</a>
-        <a href="#">Forum</a>
+        <a href="index.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="athleten.html">Athleten</a>
+        <a href="forum.html">Forum</a>
         <a href="#shop">Shop</a>
-        <a href="https://discord.gg/ny8DxBzT">Discord</a>
+        <a href="https://discord.gg/ny8DxBzT" target="_blank">Discord</a>
     </div>
+
     <header>
         <h1>Willkommen bei GrindNation</h1>
         <p>Die stärkste Community für Powerlifting & Bodybuilding.</p>
     </header>
+
     <div class="container">
         <h2>Trainiere hart. Hebe schwer. Bleib stark.</h2>
         <p>GrindNation ist dein Zuhause für die neuesten News, Top-Athleten und Expertenwissen.</p>
+        <a href="news.html" class="btn">News lesen</a>
     </div>
+
     <div class="about">
         <h2>Über GrindNation</h2>
         <p>Wir sind ein Team, das sich auf Powerlifting-Wettkämpfe fokussiert und täglich an unsere Grenzen geht.</p>
     </div>
+
     <div class="grid">
         <div class="card">
             <h3>🔥 Top Athleten</h3>
@@ -119,8 +138,10 @@
             <p>Bleib up to date mit den größten Powerlifting- und Bodybuilding-Events.</p>
         </div>
     </div>
+
     <div class="footer">
         <p>&copy; 2025 GrindNation | Folge uns auf <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
     </div>
+
 </body>
 </html>
