@@ -1,15 +1,22 @@
 <body style="background-color: #121212; color: white; font-family: Arial, sans-serif; text-align: center; position: relative; overflow: hidden;">
     <canvas id="backgroundCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></canvas>
-    <div id="athlete-section" style="text-align: center; margin-top: 20px; position: relative; z-index: 1;">
+    
+    <div id="athlete-section" style="text-align: center; margin-top: 100px; position: relative; z-index: 1;">
         <h2 style="color: #ff4500;">Max - Gründer & Athlet von GrindNation</h2>
         <img src="https://i.imgur.com/YkXoHvW.png" alt="Max Deadlift" style="width: 300px; border-radius: 10px; border: 3px solid #ff4500;">
         <p style="color: #ff4500;"><strong>Powerlifting PRs:</strong></p>
         <p>🏋️ Bench Press: 110 kg | 🏋️ Deadlift: 230 kg | 🏋️ Squat: 170 kg</p>
         <p>🏋️ Total: 510 kg | 🏋️ Bodyweight: 72.3 kg</p>
-        <p style="color: #ff4500;"><strong>IPF Dots:</strong> 375.80</p>
+        <p style="color: #ff4500;"><strong>IPF Dots:</strong> 548.64</p>
         <p style="margin-top: 20px;">Du willst auch Athlet werden? Bewirb dich hier:</p>
         <a href="mailto:grindnation@web.de" style="display: inline-block; padding: 10px 20px; background-color: #ff4500; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px;">grindnation@web.de</a>
     </div>
+    
+    <nav style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 2;">
+        <a href="index.html" style="margin: 10px; color: #ff4500; text-decoration: none; font-weight: bold;">Home</a>
+        <a href="news.html" style="margin: 10px; color: #ff4500; text-decoration: none; font-weight: bold;">News</a>
+        <a href="athletes.html" style="margin: 10px; color: #ff4500; text-decoration: none; font-weight: bold;">Athletes</a>
+    </nav>
     
     <script>
         const canvas = document.getElementById("backgroundCanvas");
@@ -18,13 +25,13 @@
         canvas.height = window.innerHeight;
 
         let dumbbells = [];
-        for (let i = 0; i < 20; i++) { // Reduzierte Anzahl der Hanteln
+        for (let i = 0; i < 10; i++) {
             dumbbells.push({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                size: Math.random() * 10 + 8, // Kleinere Hanteln
-                dx: (Math.random() - 0.5) * 1.5,
-                dy: (Math.random() - 0.5) * 1.5
+                size: Math.random() * 6 + 4,
+                dx: (Math.random() - 0.5) * 1.2,
+                dy: (Math.random() - 0.5) * 1.2
             });
         }
 
