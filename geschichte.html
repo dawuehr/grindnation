@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrindNation - Geschichte</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon hinzufügen -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 200vh; /* Höhere Höhe für mehr Scrollen */
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #ff4500, #ff0000);
+        }
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+            font-family: "Arial Black", sans-serif;
+        }
+        .timeline {
+            padding: 50px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 150vh; /* Höhere Höhe für mehr Scrollen */
+        }
+        .event {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 40px 0; /* Mehr Platz zwischen den Events */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .event.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .date {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #ff4500;
+        }
+        .description {
+            font-size: 1.2em;
+        }
+        .btn {
+            background: #ff4500;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #ff0000;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>GrindNation Geschichte</h1>
+        <p>Die Entstehung eines Powerlifting Imperiums</p>
+    </header>
+
+    <div class="timeline">
+        <div class="event" id="event1">
+            <div class="date">20.12.2024</div>
+            <p class="description">Die Idee für einen Powerlifting Club im Gym "Das Werk" wurde geboren.</p>
+        </div>
+        <div class="event" id="event2">
+            <div class="date">10.02.2025</div>
+            <p class="description">Erste Vorbereitungen für den Club wurden getroffen.</p>
+        </div>
+        <div class="event" id="event3">
+            <div class="date">22.03.2025</div>
+            <p class="description">Das meiste für den Club wurde fertiggestellt.</p>
+        </div>
+        <div class="event" id="event4">
+            <div class="date">23.03.2025</div>
+            <p class="description">Der Powerlifting Club wurde offiziell angekündigt!</p>
+        </div>
+        <a href="index.html" class="btn">Zurück zur Startseite</a>
+    </div>
+
+    <script>
+        // Funktion, um die Events beim Scrollen erscheinen zu lassen
+        window.addEventListener('scroll', () => {
+            const events = document.querySelectorAll('.event');
+            const scrollPosition = window.scrollY + window.innerHeight;
+            
+            events.forEach(event => {
+                if (event.offsetTop < scrollPosition) {
+                    event.classList.add('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
