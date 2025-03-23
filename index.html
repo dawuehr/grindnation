@@ -42,6 +42,30 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .about {
+            padding: 50px;
+            background: #1e1e1e;
+            text-align: center;
+        }
+        .about h2 {
+            color: #ff4500;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px;
+        }
+        .card {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -57,6 +81,24 @@
         <h2>Train Hard. Lift Heavy. Stay Strong.</h2>
         <img src="https://source.unsplash.com/800x500/?powerlifting" class="powerlifter" alt="Powerlifter in Action">
         <p>GrindNation is your home for the latest news, top athletes, and expert advice.</p>
+    </div>
+    <div class="about">
+        <h2>About GrindNation</h2>
+        <p>GrindNation is built for those who push their limits every day. Whether you are a powerlifter, bodybuilder, or just love the gym lifestyle, this is your home.</p>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <h3>🔥 Top Athletes</h3>
+            <p>Meet the strongest and most dedicated athletes in the game.</p>
+        </div>
+        <div class="card">
+            <h3>💪 Training Tips</h3>
+            <p>Get expert advice on how to improve your lifts and build muscle.</p>
+        </div>
+        <div class="card">
+            <h3>🏆 Competitions</h3>
+            <p>Stay updated with the biggest powerlifting and bodybuilding events.</p>
+        </div>
     </div>
     <script>
         document.addEventListener("scroll", function() {
