@@ -3,21 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Hub - Powerlifting & Bodybuilding</title>
+    <title>GrindNation - Powerlifting & Bodybuilding</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #121212;
             color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #ff4500, #ff0000);
         }
         h1 {
-            color: #ff4500;
+            font-size: 3em;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .powerlifter {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 20px auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-in-out;
+        }
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Gym Hub</h1>
-    <p>Your #1 place for Powerlifting & Bodybuilding News!</p>
+    <header>
+        <h1>Welcome to GrindNation</h1>
+        <p>The #1 Community for Powerlifting & Bodybuilding</p>
+    </header>
+    <div class="container">
+        <h2>Train Hard. Lift Heavy. Stay Strong.</h2>
+        <img src="https://source.unsplash.com/800x500/?powerlifting" class="powerlifter" alt="Powerlifter in Action">
+        <p>GrindNation is your home for the latest news, top athletes, and expert advice.</p>
+    </div>
+    <script>
+        document.addEventListener("scroll", function() {
+            let images = document.querySelectorAll(".powerlifter");
+            images.forEach(img => {
+                if (img.getBoundingClientRect().top < window.innerHeight - 100) {
+                    img.classList.add("fade-in");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
