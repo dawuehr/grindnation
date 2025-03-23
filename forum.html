@@ -21,7 +21,7 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px #ff4500;
         }
-        #post-input {
+        #name-input, #post-input {
             width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 10px;
@@ -51,12 +51,27 @@
             height: 100%;
             z-index: 0;
         }
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <canvas id="backgroundCanvas"></canvas>
     <div id="forum-container">
         <h2 style="color: #ff4500;">GrindNation Forum</h2>
+        <input type="text" id="name-input" placeholder="Dein Name...">
+        <select id="category">
+            <option value="Allgemein">Allgemein</option>
+            <option value="Technik">Technik</option>
+            <option value="Training">Training</option>
+            <option value="Ernährung">Ernährung</option>
+            <option value="Wettkämpfe">Wettkämpfe</option>
+        </select>
         <input type="text" id="post-input" placeholder="Schreib etwas...">
         <button id="post-button">Posten</button>
         <div id="posts"></div>
@@ -105,11 +120,14 @@
         });
 
         document.getElementById("post-button").addEventListener("click", function() {
+            let name = document.getElementById("name-input").value;
+            let category = document.getElementById("category").value;
             let postText = document.getElementById("post-input").value;
-            if (postText.trim() !== "") {
+
+            if (name.trim() !== "" && postText.trim() !== "") {
                 let postDiv = document.createElement("div");
                 postDiv.classList.add("post");
-                postDiv.textContent = postText;
+                postDiv.innerHTML = `<strong>${name}</strong> [${category}]: ${postText}`;
                 document.getElementById("posts").appendChild(postDiv);
                 document.getElementById("post-input").value = "";
             }
